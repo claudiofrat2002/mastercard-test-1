@@ -6,7 +6,7 @@ import os
 app = Flask(__name__)            
 
 #Declare the web path and function
-@app.route("/hello")                  
+@app.route("/")                  
 def hello():                     
     return "Hello Brand new World!"     
 
