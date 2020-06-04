@@ -9,4 +9,4 @@
  docker tag python-hello-world:${LOCAL_TAG} localhost:5000/python-hello-world:${LOCAL_TAG}
  
  #Pushing the image to local repository
- docker push localhost:5000/python-hello-world:${LOCAL_TAG}
+ docker push localhost:5000/python-hello
