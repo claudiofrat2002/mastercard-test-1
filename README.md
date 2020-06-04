@@ -9,10 +9,7 @@
 
 4. Tags are different(27b6ba9 vs 4552dbc) having bind the tagging docker script to the git commit  LOCAL_TAG=$(git rev-parse --short HEAD)
 
-5. Changed the code using a different context root for the app and re-pushed to the repo 
-MLWES35909:mc-test-1 c.frattari$ ./push-image.sh
-
-
+5. Changed the code using a different context root for the app and re-pushed to the repo and push the new tag to the registry 
 
 6. At the moment I have this tag in the registry 
 {"name":"python-hello-world","tags":["27b6ba9","f8ff250","4552dbc"]}, going to add a manual latest tag on the last version 
@@ -25,8 +22,8 @@ In the script list-tag-from-repo.sh I'm going to query the registry API and obta
 ./list-tag-from-repo.sh
 "python-hello-world:latest" "registry:latest"
 
-7. I've chosen to create for this iac challenge an elastic beanstalk in AWS(terraform-iac folder) configure a k8s cluster could be too expensive in time for my need... I needed to create a role, a sg too for have the EBS up and running. I've created a backend to save the state of the infrastructure.
-Executing the command in the makefile the environment will be created(you need to have the right aws creds in your env although).
+7. I've chosen to create for this iac challenge an elastic beanstalk in AWS(terraform-iac folder) configure a eks cluster could be too expensive in time for my need... I needed to create a role, a sg too for have the EBS up and running. I've created a backend to save the state of the infrastructure.
+Executing the command in the makefile the environment will be created(you need to have the right aws creds in your env although!).
 
 To deploy the application I've created a script deploy_image_on_ebs.sh that push the build of the app on an ECR registry and then trigger the update of the environment. In this way the latest image pushed will be deployed.
 
