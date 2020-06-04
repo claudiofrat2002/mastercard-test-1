@@ -8,7 +8,7 @@ app = Flask(__name__)
 #Declare the web path and function
 @app.route("/hello")                  
 def hello():                     
-    return "Hello World!"     
+    return "Hello Brand new World!"     
 
 #Run main
 if __name__ == "__main__":    
