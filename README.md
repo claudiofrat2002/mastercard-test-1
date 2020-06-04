@@ -130,6 +130,10 @@ docker push localhost:5000/python-hello-world
 In the script list-tag-from-repo.sh I'm going to query the registry API and have all the repo/images that got a latest tag, in my case:
 
 ./list-tag-from-repo.sh
-"python-hello:latest" "python-hello-world:latest" "registry:latest"
+"python-hello-world:latest" "registry:latest"
 
+7. I've chosen to create for this iac challenge an elastic beanstalk in AWS(terraform-iac folder), I needed to create a role, a sg too for have the EBS up and running. I've created a backend to save the state of the infrastructure.
+Executing the command in the makefile the environment will be created(you need to have the right aws creds in your env).
+
+To deploy the application I've created a script deploy_image_on_ebs.sh that push the build of the app on an ECR registry and then trigger the update of the environment. 
 
